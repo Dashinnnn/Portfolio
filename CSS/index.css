@@ -5,6 +5,7 @@
 }
 
 html, body {
+    overflow-x: hidden;
     height: 100%;
     background: #1B262C ;
 }
@@ -13,13 +14,15 @@ body {
     min-height: 100vh;
 }
 .main-container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     margin: 0;
 
     display: grid;
+    align-items: start;
     grid-template-columns: 1fr 100px;
     grid-template-rows:1fr;
+    
 }
 
 .main {
@@ -27,14 +30,29 @@ body {
     display: flex; 
     justify-content:center;
     align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
+
+/* Hero-section */
 
 .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    gap: 80px;
+    align-items: center;
+    min-height: 100vh;
+    gap: 3rem;
+    width: 100%;
+}
+
+.hook-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 140ch;
+    gap: 0.1rem;
 }
 
 .hook {
@@ -81,8 +99,10 @@ body {
 
 .contact-list {
     display: flex;
-    justify-content: left;
-    gap: 25px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 140ch;
+
 }
 
 .icon {
@@ -90,14 +110,102 @@ body {
     font-size: 40px;
 }
 
+/* about-me-section */
+
+.about-me-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    gap: 3rem;
+}
+
+.image-portrait-resume-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.image-portrait-resume-section img {
+    width: 88%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-portrait-resume-section button {
+    width: 35%;
+    height: auto;
+    color: white;
+    padding: 1.5vh;
+    background: #3282B8;
+    border: none;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.about-me-info {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.about-me-header {
+    font-family: "Hepta Slab", serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.about-me-text {
+    font-family: "Hepta Slab", serif;
+    font-weight: 500;
+    font-size: 1.8rem; 
+}
+
+.about-me-skills {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.about-me-skill-card {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-family: "Hepta Slab", serif;
+    text-transform: uppercase;
+    font-weight:600;
+    border-left: .3rem solid #BC7431;
+    padding: 2vh;
+}
+
 /* sidebar */
 
 .sidebar {
     color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; 
+    z-index: 10;
 }
 
 .sidebar nav {
