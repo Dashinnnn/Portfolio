@@ -8,6 +8,7 @@ html, body {
     overflow-x: hidden;
     height: 100%;
     background: #1B262C ;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -77,9 +78,9 @@ body {
     border-right: 5px solid white;
     padding-right: 6px;
 
-    text-decoration: underline;
+    /* text-decoration: underline;
     text-decoration-color: white;
-    text-underline-offset: 20px;
+    text-underline-offset: 20px; */
 
     animation: 
         typing 7s steps(13, end) infinite,  
@@ -102,6 +103,7 @@ body {
     align-items: flex-start;
     width: 100%;
     max-width: 140ch;
+    gap: 1.5rem;
 
 }
 
@@ -119,6 +121,7 @@ body {
     min-height: 100vh;
     width: 100%;
     gap: 3rem;
+    margin: 2rem auto;
 }
 
 .image-portrait-resume-section {
@@ -167,6 +170,7 @@ body {
 .about-me-header {
     font-family: "Hepta Slab", serif;
     text-transform: uppercase;
+    letter-spacing: 1rem;
     font-weight: bolder;
 }
 
@@ -194,6 +198,154 @@ body {
     padding: 2vh;
 }
 
+/* Skils */
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 1rem;
+    gap: 2.5rem;
+}
+
+.skills-header-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skills-header {
+    display: flex;
+    justify-content: center;
+}
+
+.skills-text {
+    display: flex;
+    justify-content: center;
+}
+
+.skills-header h1{
+    font-family: "Hepta Slab", serif;
+    font-size: clamp(1.8rem, 3vw, 5rem);
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.skills-text p {
+    font-family: "Hepta Slab", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.text-bold {
+    font-family: "Hepta Slab", serif;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #3282B8;
+}
+
+.skills-grid {
+    width: min(1000px, 100%);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.skill-icon {
+    --bg-default: #0f1a20;
+    --bg-hover: #e34c26;
+    --text-color: white;
+    --icon-opacity: 0;
+    --text-translate: 0;
+    
+    aspect-ratio: 1/1;
+    width: 180px;
+    min-width: 140px;
+    background:var(--bg-default);
+    border: 1px solid #2a3b47;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-family: "Hepta Slab", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+
+}
+
+.skill-icon span {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+    transform: translateY(var(--text-translate));
+}
+
+.skill-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-hover);
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.skill-icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: var(--icon-opacity);
+    transition: opacity 0.5s ease 0.1s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.skill-icon::after {
+  background-image: var(--icon);
+}
+
+.skill-icon:hover {
+    --bg-default: transparent;
+    --text-translate: 300%;
+    --icon-opacity: 1;
+}
+
+.react-text:hover {
+    color: #61dafb;
+}
+
+.next-text:hover {
+    color: transparent;
+}
+
+.skill-icon:hover::before {
+    transform: translateX(0);
+}
+
+.skill-icon:hover span {
+    opacity: 0.9;
+}
+
+
+
 /* sidebar */
 
 .sidebar {
@@ -210,29 +362,54 @@ body {
 
 .sidebar nav {
     height: 100%;
+    width: 5vw;
     display: flex;
     align-items: center;
-}
-
-.sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 1em;
+    justify-content: space-around;
+    transform: translate 0.3s ease ;
+
+    scroll-target-group: auto;
 }
 
-.sidebar li{
-    writing-mode:  vertical-rl;
+.sidebar a {
+    writing-mode:  vertical-lr;
     text-orientation: mixed;
     font-family: "Hepta Slab", serif;
     font-size: 1.1rem;
     font-weight: 500;
     text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
     white-space: nowrap;
+    padding: 2vh 1vh;
 
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
+
+    transition: 
+        color 0.35s ease,
+        font-weight 0.3s ease,
+        transform 0.4s ease,
+        border-left 0.35s ease;
+}
+
+.sidebar a:hover {
+    color: #3282B8;
+    font-weight: 900;
+    transform: rotate(-180deg) translateX(12px);
+    border-left: 3px solid #e34c26;
+}
+
+.sidebar a:target-current {
+    color: #3282B8;
+    font-weight: 900;
+    transform: rotate(-180deg) translateX(12px);
+    border-left: 3px solid #e34c26;
 }
 
 

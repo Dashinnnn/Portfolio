@@ -14,7 +14,7 @@
     <div class="main-container">
         <div class="main">
             <!--Hero Section-->
-            <div class="hero-section">
+            <div class="hero-section" id="hero-section">
                 <div class="hook-section">
                     <h1 class="hook">I'M</h1>
                     <h1 class="hook">YAGODA,</h1>
@@ -28,7 +28,7 @@
             </div> 
 
             <!--About me section-->
-            <div class="about-me-section">
+            <div class="about-me-section" id="about-me-section">
                 <div class="image-portrait-resume-section">
                     <img src="./assets//images/aboutme-img.png" alt="Portrait photo">
                     <button>
@@ -52,16 +52,36 @@
                     </div>
                 </div>
             </div>
+
+            <!--Skills section-->
+            <div class="skills-section" id="skills-section">
+                <div class="skills-header-text-container">
+                    <div class="skills-header">
+                        <h1>skills</h1>
+                    </div>
+                    <div class="skills-text">
+                        <p>
+                            My current preferred tech stack is the <span class="text-bold">MERN</span> stack, but I can be flexible and learn other stacks.
+                        </p>
+                    </div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-icon" style="--bg-hover: #e34c26; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg)"> <span>Html</span></div>
+                    <div class="skill-icon" style="--bg-hover: #1572b6; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg)"> <span>css</span></div>
+                    <div class="skill-icon" style="--bg-hover: #f3df5f; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg)"> <span>JS</span></div>
+                    <div class="skill-icon" style="--bg-hover: #7377ad; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg)"> <span>php</span></div>
+                    <div class="skill-icon react-text" style="--bg-hover: #000000; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg)"> <span>React</span></div>
+                    <div class="skill-icon next-text" style="--bg-hover: #ffffff; --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg)"> <span>Next.js</span></div>
+                    <div class="skill-icon" style="--bg-hover: #4479a1;  --icon: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg)"> <span>mysql</span></div>
+                </div>
+            </div>
         </div>
         <div class="sidebar">
             <nav>
-                <ul>
-                    <li>hero</li>
-                    <li>about me</li>
-                    <li>skills</li>
-                    <li>experience</li>
-                    <li>projects</li>
-                </ul>
+                    <a href="#hero-section">hero</a>
+                    <a href="#about-me-section">about me</a>
+                    <a href="#skills-section">skills</a>
+                    <a href="#projects-section">projects</a>
             </nav>
         </div>
     </div>
