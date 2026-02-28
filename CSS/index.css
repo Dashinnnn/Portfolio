@@ -43,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    gap: 3rem;
+    gap: 1rem;
     width: 100%;
 }
 
@@ -54,6 +54,7 @@ body {
     width: 100%;
     max-width: 140ch;
     gap: 0.1rem;
+    padding-left: 2rem;
 }
 
 .hook {
@@ -102,9 +103,10 @@ body {
     display: flex;
     align-items: flex-start;
     width: 100%;
-    max-width: 140ch;
+    max-width: 130ch;
     gap: 1.5rem;
-
+    border-top: 5px solid whitesmoke ;
+    padding: 1rem 1rem;
 }
 
 .icon {
