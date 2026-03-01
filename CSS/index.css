@@ -101,18 +101,28 @@ body {
 
 .contact-list {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    max-width: 130ch;
+    max-width: 100ch;
     gap: 1.5rem;
-    border-top: 5px solid whitesmoke ;
+    border-top: 5px solid #e34c26 ;
+    border-bottom: 5px solid #e34c26 ;
     padding: 1rem 1rem;
+    border-radius: 1rem;
 }
 
 .icon {
     color: white;
-    font-size: 40px;
+    font-size: 2rem;
 }
+
+
+.contact-redirection {
+    color: white;
+    font-size: 2rem;
+}
+
 
 /* about-me-section */
 
@@ -196,7 +206,7 @@ body {
     font-family: "Hepta Slab", serif;
     text-transform: uppercase;
     font-weight:600;
-    border-left: .3rem solid #BC7431;
+    border-left: .3rem solid #e34c26;
     padding: 2vh;
 }
 
@@ -266,6 +276,7 @@ body {
     --bg-default: #0f1a20;
     --bg-hover: #e34c26;
     --text-color: white;
+    --box-shadow: #e34c26;
     --icon-opacity: 0;
     --text-translate: 0;
     
@@ -278,7 +289,8 @@ body {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease
+                box-shadow 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,6 +299,10 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 1.1rem;
+
+    box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25);
+    inset: 0 1px 0 rgba(255, 255, 255, 0.08);
 
 }
 
@@ -328,14 +344,23 @@ body {
     --bg-default: transparent;
     --text-translate: 300%;
     --icon-opacity: 1;
+
+    box-shadow: 
+        0 0 12px 4px rgba(var(--box-shadow), 0.6),
+        0 0 28px 12px rgba(var(--box-shadow), 0.4)
+        0 0 50px 20px rgba(var(--box-shadow), 0.25);
 }
 
-.react-text:hover {
-    color: #61dafb;
-}
+.react-text:hover {color: #61dafb;}
 
+.next-text:hover {color: transparent;}
+
+.react-text:hover,
 .next-text:hover {
-    color: transparent;
+    box-shadow: 
+        0 0 16px 6px rgba(var(--box-shadow), 0.7),
+        0 0 40px 18px rgba(var(--box-shadow), 0.5),
+        0 0 70px 30px rgba(var(--box-shadow), 0.3);
 }
 
 .skill-icon:hover::before {
