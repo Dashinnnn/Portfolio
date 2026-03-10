@@ -7,8 +7,8 @@
 html, body {
     overflow-x: hidden;
     height: 100%;
-    background: #1B262C ;
     scroll-behavior: smooth;
+    background: #1b262c;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
     min-height: 100vh;
     gap: 1rem;
     width: 100%;
+    background-image: linear-gradient(to top, #1b262c, #1f3643, #22475c, #255876, #296a92, #2f79a4, #3488b7, #3998ca, #40a8d7, #49b9e4, #54c9f0, #61dafb);
 }
 
 .hook-section {
@@ -437,6 +438,32 @@ body {
     font-weight: 900;
     transform: rotate(-180deg) translateX(12px);
     border-left: 3px solid #e34c26;
+}
+
+.intro-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1b262c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: top 1.2s ease-in-out;
+    pointer-events: none;
+}
+
+.loading-text {
+    color: white;
+    font-family:"Hepta Slab", serif;
+    text-transform: uppercase;
+    font-size: clamp(4rem, 8vh, 7rem);
+    letter-spacing: 5px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1.2s ease-out;
 }
 
 
