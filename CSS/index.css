@@ -15,24 +15,20 @@ body {
     min-height: 100vh;
 }
 .main-container {
+    position: relative;
     min-height: 100vh;
     width: 100vw;
     margin: 0;
-
-    display: grid;
-    align-items: start;
-    grid-template-columns: 1fr 100px;
-    grid-template-rows:1fr;
-    
 }
 
 .main {
     color: #FFFFFF;
     display: flex; 
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    /* padding-right: 100px;  */
 }
 
 /* Hero-section */
@@ -61,28 +57,24 @@ body {
 .hook {
     font-family: "Hepta Slab", serif;
     font-weight: 500;
-    font-size: 100px;
+    font-size: clamp(2.2rem, 9vw, 100px);
+    line-height: 1.1;
 }
 
 .hook-colored {
     font-family: "Hepta Slab", serif;
     font-weight: bolder;
     color: #3282B8;
-    font-size: 100px;
+    font-size: clamp(2.2rem, 9vw, 100px);
+    line-height: 1.1;
 
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    
     width: max-content;           
     max-width: 0;
-
     border-right: 5px solid white;
     padding-right: 6px;
-
-    /* text-decoration: underline;
-    text-decoration-color: white;
-    text-underline-offset: 20px; */
 
     animation: 
         typing 7s steps(13, end) infinite,  
@@ -187,10 +179,10 @@ body {
     font-weight: bolder;
 }
 
-.about-me-text {
+.about-me-text p {
     font-family: "Hepta Slab", serif;
     font-weight: 500;
-    font-size: 1.8rem; 
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem); 
 }
 
 .about-me-skills {
@@ -378,13 +370,15 @@ body {
 
 .sidebar {
     color: #FFFFFF;
-    position: sticky;
+    position: fixed;
     top: 0;
-    bottom: 0;
+    right: 0;
+    width: 100px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
     z-index: 10;
 }
 
@@ -406,34 +400,27 @@ body {
 }
 
 .sidebar a {
-    writing-mode:  vertical-lr;
+    writing-mode: vertical-lr;
     text-orientation: mixed;
     font-family: "Hepta Slab", serif;
     font-size: 1.1rem;
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
+    mix-blend-mode: difference;
     white-space: nowrap;
     padding: 2vh 1vh;
-
     transform: rotate(-180deg);
-
     transition: 
-        color 0.35s ease,
         font-weight 0.3s ease,
         transform 0.4s ease,
         border-left 0.35s ease;
 }
 
-.sidebar a:hover {
-    color: #3282B8;
-    font-weight: 900;
-    transform: rotate(-180deg) translateX(12px);
-    border-left: 3px solid #e34c26;
-}
-
+.sidebar a:hover,
 .sidebar a:target-current {
+    mix-blend-mode: normal;
     color: #3282B8;
     font-weight: 900;
     transform: rotate(-180deg) translateX(12px);
