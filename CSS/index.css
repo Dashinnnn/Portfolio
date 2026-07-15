@@ -71,10 +71,16 @@ body {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
+    
     width: max-content;           
     max-width: 0;
+
     border-right: 5px solid white;
     padding-right: 6px;
+
+    /* text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 20px; */
 
     animation: 
         typing 7s steps(13, end) infinite,  
@@ -179,6 +185,12 @@ body {
     font-weight: bolder;
 }
 
+.about-me-text {
+    font-family: "Hepta Slab", serif;
+    font-weight: 500;
+    font-size: 1.8rem; 
+}
+
 .about-me-text p {
     font-family: "Hepta Slab", serif;
     font-weight: 500;
@@ -246,13 +258,13 @@ body {
 .skills-text p {
     font-family: "Hepta Slab", serif;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
 }
 
 .text-bold {
     font-family: "Hepta Slab", serif;
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
     color: #3282B8;
 }
 
@@ -453,8 +465,121 @@ body {
     transition: all 1.2s ease-out;
 }
 
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+    .hook-section {
+        padding-left: 1.5rem;
+    }
 
+    .about-me-section {
+        gap: 2rem;
+        padding: 0 2rem;
+    }
 
+    .about-me-info {
+        max-width: 38rem;
+    }
 
+    .image-portrait-resume-section {
+        max-width: 300px;
+    }
 
+    .about-me-skills {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
 
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar a {
+        font-size: 1rem;
+        padding: 1.5vh 0.5vh;
+    }
+}
+
+/* ===== Phone / small tablet ===== */
+@media (max-width: 768px) {
+    .about-me-section {
+        flex-direction: column;
+        min-height: auto;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .image-portrait-resume-section {
+        max-width: 240px;
+        margin: 0;
+    }
+
+    .about-me-info {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-me-header {
+        letter-spacing: 0.4rem;
+    }
+
+    .about-me-skills {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .contact-list {
+        max-width: 100%;
+    }
+
+    .hook-section {
+        padding-left: 1rem;
+        align-items: center;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+
+    .skills-grid {
+        gap: 1.5rem;
+    }
+
+    .skill-icon {
+        width: 130px;
+        min-width: 110px;
+    }
+
+    .sidebar {
+        width: 50px;
+    }
+
+    .sidebar a {
+        font-size: 0.85rem;
+        padding: 1vh 0.3vh;
+        letter-spacing: 0.5px;
+    }
+
+    .sidebar a:hover,
+    .sidebar a:target-current {
+        transform: rotate(-180deg) translateX(6px);
+        border-left: 2px solid #e34c26;
+    }
+}
+
+/* ===== Very small phones ===== */
+@media (max-width: 400px) {
+    .skill-icon {
+        width: 110px;
+        min-width: 90px;
+        font-size: 0.9rem;
+    }
+
+    .sidebar {
+        width: 42px;
+    }
+
+    .sidebar a {
+        font-size: 0.7rem;
+    }
+}
